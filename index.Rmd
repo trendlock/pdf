@@ -1,0 +1,99 @@
+---
+title: "Guide to Knitting PDF's with RMarkdown"
+author: "Ross"
+date: "`r Sys.Date()`"
+output:
+  html_document:
+    toc: true
+    toc_depth: 2
+    toc_float: true
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(tidyverse)
+```
+
+# General
+
+# Spacing, Page Breaks, Formatting
+
+In general the document with format each object chronologically. But some chuck options will modify the placement of an plot, table or image.
+
+> Bottom line: Markdown is not LaTeX. It was designed for HTML instead of LaTeX.
+
+(Yihui Xie Explaining Markdown, Pandoc,formattting power on SO )[https://stackoverflow.com/a/17648350/9115822]
+
+## Main lesson
+Using captions (`fig.cap`) treats plots, table or images diffrerently and by default places one per page.
+
+See `ex_breaks.pdf` and `ex_no_breaks.pdf` to see the difference.
+
+## Sidenote
+There are options to set behaviour but they don't work very well, as they dont seem to be strict.
+
+```{r fig_pos, eval=F}
+knitr::opts_chunk$set(fig.pos = "t")
+```
+
+Where:
+
+> h , here; t , top; b , bottom; p , page of float
+
+# Margin Control
+
+Latex/Pandoc commands can be used in the first layer of the `yaml`. (First layer meaning the same indentation as `title`, `date`, etc.)
+
+```{r margin, eval=F}
+geometry: margin=1.2in
+```
+
+# Typeface / Font
+
+This is a tricky one because there isn't `R` and `RMarkdown` specific functions to modify the font...
+
+All indications are that you have to use LaTeX.
+
+```
+\renewcommand{\familydefault}{\rmdefault}
+```
+(Some possibilities)[https://www.sharelatex.com/learn/Font_sizes,_families,_and_styles#Font_families]
+
+# Footnotes and Bibliography
+
+# Page Numbers
+
+By default a `RMarkdown` using the `pdf_document` output with have page numbers. Controlled in `yaml` with LaTeX command:
+
+```
+header-includes:
+  \pagenumbering{gobble}
+```
+
+
+# Tables
+
+If the data is in a `data.frame`, `df` or `tibble` class object then we can just `print()` the data to get a table.
+
+Using the `kable()` function neatens it up with cell borders etc.
+
+
+```{r tables}
+kableExtra::kable(head(iris))
+```
+
+## Captions
+
+Using the `caption` argument for `kable` you can add numbered table captions.
+
+> NOTE: when using captions `kable` rearranges the placing of the table.
+
+<pre><code>```{r cars2, echo=F}
+knitr::kable(head(mtcars))
+```</code></pre>
+
+vs
+
+<pre><code>```{r cars2, echo=F}
+knitr::kable(head(mtcars), caption = "A Caption")
+```</code></pre>

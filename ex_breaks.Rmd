@@ -1,0 +1,72 @@
+---
+title: "Example PDF Document: Breaks"
+author: "Ross"
+date: "`r Sys.Date()`"
+output:
+  pdf_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(
+  echo = TRUE,
+  fig.align = "centre"
+)
+library(tidyverse)
+```
+
+## Title 1
+
+Lorem ipsum dolor sit amet, ius viris constituto mnesarchum ea, ius dicat inani iracundia ei, vim facer homero eirmod te. Nihil phaedrum qui eu. Et legere moderatius sea, solum soluta euismod id quo. Ei pro virtute consequat interesset, in cum melius graecis moderatius. Utinam accusata no sea, an nam solum omnium impedit, equidem propriae urbanitas per an.
+
+
+
+
+## Title 2
+
+Nam an iudico munere, mel errem nostrud et. Dicat audire accommodare eum et, assum laoreet sed ad. Ne error eirmod salutatus pro. An noster fabellas democritum cum. Ponderum imperdiet scribentur et vim, ad has enim errem vituperatoribus. Usu eu noster accusamus, mel quis urbanitas cu.
+
+
+
+## Title 3
+
+Lorem ipsum dolor sit amet, ius viris constituto mnesarchum ea, ius dicat inani iracundia ei, vim facer homero eirmod te. Nihil phaedrum qui eu. Et legere moderatius sea, solum soluta euismod id quo. Ei pro virtute consequat interesset, in cum melius graecis moderatius. Utinam accusata no sea, an nam solum omnium impedit, equidem propriae urbanitas per an.
+
+```{r pressure3, echo=F, fig.cap = "A figure about blah"}
+plot(pressure)
+```
+
+Nam an iudico munere, mel errem nostrud et. Dicat audire accommodare eum et, assum laoreet sed ad. Ne error eirmod salutatus pro. An noster fabellas democritum cum. Ponderum imperdiet scribentur et vim, ad has enim errem vituperatoribus. Usu eu noster accusamus, mel quis urbanitas cu.
+
+
+## Title 4
+
+Lorem ipsum dolor sit amet, ius viris constituto mnesarchum ea, ius dicat inani iracundia ei, vim facer homero eirmod te. Nihil phaedrum qui eu. Et legere moderatius sea, solum soluta euismod id quo. Ei pro virtute consequat interesset, in cum melius graecis moderatius. Utinam accusata no sea, an nam solum omnium impedit, equidem propriae urbanitas per an.
+
+Nam an iudico munere, mel errem nostrud et. Dicat audire accommodare eum et, assum laoreet sed ad. Ne error eirmod salutatus pro. An noster fabellas democritum cum. Ponderum imperdiet scribentur et vim, ad has enim errem vituperatoribus. Usu eu noster accusamus, mel quis urbanitas cu.
+
+
+
+## Title 5
+
+Lorem ipsum dolor sit amet, ius viris constituto mnesarchum ea, ius dicat inani iracundia ei, vim facer homero eirmod te. Nihil phaedrum qui eu. Et legere moderatius sea, solum soluta euismod id quo. Ei pro virtute consequat interesset, in cum melius graecis moderatius. Utinam accusata no sea, an nam solum omnium impedit, equidem propriae urbanitas per an.
+
+Nam an iudico munere, mel errem nostrud et. Dicat audire accommodare eum et, assum laoreet sed ad. Ne error eirmod salutatus pro. An noster fabellas democritum cum. Ponderum imperdiet scribentur et vim, ad has enim errem vituperatoribus. Usu eu noster accusamus, mel quis urbanitas cu.
+
+
+## Title 6
+
+Lorem ipsum dolor sit amet, ius viris constituto mnesarchum ea, ius dicat inani iracundia ei, vim facer homero eirmod te. Nihil phaedrum qui eu. Et legere moderatius sea, solum soluta euismod id quo. Ei pro virtute consequat interesset, in cum melius graecis moderatius. Utinam accusata no sea, an nam solum omnium impedit, equidem propriae urbanitas per an.
+
+Nam an iudico munere, mel errem nostrud et. Dicat audire accommodare eum et, assum laoreet sed ad. Ne error eirmod salutatus pro. An noster fabellas democritum cum. Ponderum imperdiet scribentur et vim, ad has enim errem vituperatoribus. Usu eu noster accusamus, mel quis urbanitas cu.
+
+
+## Title 6
+
+Lorem ipsum dolor sit amet, ius viris constituto mnesarchum ea, ius dicat inani iracundia ei, vim facer homero eirmod te. Nihil phaedrum qui eu. Et legere moderatius sea, solum soluta euismod id quo. Ei pro virtute consequat interesset, in cum melius graecis moderatius. Utinam accusata no sea, an nam solum omnium impedit, equidem propriae urbanitas per an.
+
+Nam an iudico munere, mel errem nostrud et. Dicat audire accommodare eum et, assum laoreet sed ad. Ne error eirmod salutatus pro. An noster fabellas democritum cum. Ponderum imperdiet scribentur et vim, ad has enim errem vituperatoribus. Usu eu noster accusamus, mel quis urbanitas cu.
+
+
+```{r pressure1, echo=F, fig.cap = "A figure about blah"}
+plot(pressure)
+```

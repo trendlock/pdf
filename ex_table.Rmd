@@ -1,0 +1,47 @@
+---
+title: "Example PDF Document"
+author: "Ross"
+date: "`r Sys.Date()`"
+output:
+  pdf_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE, fig.align = "centre")
+library(tidyverse)
+```
+
+## Knitting PDF's with RMarkdown
+
+Lorem ipsum dolor sit amet, ius viris constituto mnesarchum ea, ius dicat inani iracundia ei, vim facer homero eirmod te. Nihil phaedrum qui eu. Et legere moderatius sea, solum soluta euismod id quo. Ei pro virtute consequat interesset, in cum melius graecis moderatius. Utinam accusata no sea, an nam solum omnium impedit, equidem propriae urbanitas per an.
+
+Nam an iudico munere, mel errem nostrud et. Dicat audire accommodare eum et, assum laoreet sed ad. Ne error eirmod salutatus pro. An noster fabellas democritum cum. Ponderum imperdiet scribentur et vim, ad has enim errem vituperatoribus. Usu eu noster accusamus, mel quis urbanitas cu.
+
+
+```{r cars, echo=F}
+kableExtra::kable(head(mtcars))
+
+```
+
+
+Lorem ipsum dolor sit amet, ius viris constituto mnesarchum ea, ius dicat inani iracundia ei, vim facer homero eirmod te. Nihil phaedrum qui eu. Et legere moderatius sea, solum soluta euismod id quo. Ei pro virtute consequat interesset, in cum melius graecis moderatius. Utinam accusata no sea, an nam solum omnium impedit, equidem propriae urbanitas per an.
+
+Nam an iudico munere, mel errem nostrud et. Dicat audire accommodare eum et, assum laoreet sed ad. Ne error eirmod salutatus pro. An noster fabellas democritum cum. Ponderum imperdiet scribentur et vim, ad has enim errem vituperatoribus. Usu eu noster accusamus, mel quis urbanitas cu.
+
+```{r cars2, echo=F}
+knitr::kable(head(mtcars), caption = "A Caption")
+
+```
+
+## Another Title
+
+Lorem ipsum dolor sit amet, ius viris constituto mnesarchum ea, ius dicat inani iracundia ei, vim facer homero eirmod te. Nihil phaedrum qui eu. Et legere moderatius sea, solum soluta euismod id quo. Ei pro virtute consequat interesset, in cum melius graecis moderatius. Utinam accusata no sea, an nam solum omnium impedit, equidem propriae urbanitas per an.
+
+Nam an iudico munere, mel errem nostrud et. Dicat audire accommodare eum et, assum laoreet sed ad. Ne error eirmod salutatus pro. An noster fabellas democritum cum. Ponderum imperdiet scribentur et vim, ad has enim errem vituperatoribus. Usu eu noster accusamus, mel quis urbanitas cu.
+
+
+## Again
+
+Lorem ipsum dolor sit amet, ius viris constituto mnesarchum ea, ius dicat inani iracundia ei, vim facer homero eirmod te. Nihil phaedrum qui eu. Et legere moderatius sea, solum soluta euismod id quo. Ei pro virtute consequat interesset, in cum melius graecis moderatius. Utinam accusata no sea, an nam solum omnium impedit, equidem propriae urbanitas per an.
+
+Nam an iudico munere, mel errem nostrud et. Dicat audire accommodare eum et, assum laoreet sed ad. Ne error eirmod salutatus pro. An noster fabellas democritum cum. Ponderum imperdiet scribentur et vim, ad has enim errem vituperatoribus. Usu eu noster accusamus, mel quis urbanitas cu.
