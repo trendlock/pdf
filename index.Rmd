@@ -14,8 +14,6 @@ knitr::opts_chunk$set(echo = TRUE)
 library(tidyverse)
 ```
 
-# General
-
 # Spacing, Page Breaks, Formatting
 
 In general the document with format each object chronologically. But some chuck options will modify the placement of an plot, table or image.
@@ -32,7 +30,7 @@ See `ex_breaks.pdf` and `ex_no_breaks.pdf` to see the difference.
 ## Sidenote
 There are options to set behaviour but they don't work very well, as they dont seem to be strict.
 
-```{r fig_pos, eval=F}
+```
 knitr::opts_chunk$set(fig.pos = "t")
 ```
 
@@ -44,7 +42,7 @@ Where:
 
 Latex/Pandoc commands can be used in the first layer of the `yaml`. (First layer meaning the same indentation as `title`, `date`, etc.)
 
-```{r margin, eval=F}
+```
 geometry: margin=1.2in
 ```
 
@@ -59,7 +57,53 @@ All indications are that you have to use LaTeX.
 ```
 (Some possibilities)[https://www.sharelatex.com/learn/Font_sizes,_families,_and_styles#Font_families]
 
-# Footnotes and Bibliography
+# Footnotes
+
+Easy, using `[^1]` and a connected `[^1]: blah`:
+
+```
+Utinam accusata no sea, an nam solum omnium impedit, equidem propriae urbanitas per an. [^1]
+
+[^1]: Lorem ipsum dolor sit amet, ius viris constituto mnesarchum ea, ius dicat inani iracundia ei, vim facer homero eirmod te. Nihil phaedrum qui eu.
+
+```
+
+# Bibliographies and Citations
+
+There are a bunch of ways to do this. I have included in `ex_main.Rmd` and example of a internal `yaml` reference, with citation and Bibliography at the end. A bit of a LaTeX learning curve.
+
+### A Reference
+```
+references:
+- id: fenner2012a
+  title: One-click science marketing
+  author:
+  - family: Fenner
+    given: Martin
+  container-title: Nature Materials
+  volume: 11
+  URL: 'http://dx.doi.org/10.1038/nmat3283'
+  DOI: 10.1038/nmat3283
+  issue: 4
+  publisher: Nature Publishing Group
+  page: 261-263
+  type: article-journal
+  issued:
+    year: 2012
+    month: 3
+```
+
+### A Citation
+
+```
+[@fenner2012a]
+```
+
+### Automatically getting an attached bibliography at the end of document
+
+```
+# References
+```
 
 # Page Numbers
 
@@ -81,19 +125,3 @@ Using the `kable()` function neatens it up with cell borders etc.
 ```{r tables}
 kableExtra::kable(head(iris))
 ```
-
-## Captions
-
-Using the `caption` argument for `kable` you can add numbered table captions.
-
-> NOTE: when using captions `kable` rearranges the placing of the table.
-
-<pre><code>```{r cars2, echo=F}
-knitr::kable(head(mtcars))
-```</code></pre>
-
-vs
-
-<pre><code>```{r cars2, echo=F}
-knitr::kable(head(mtcars), caption = "A Caption")
-```</code></pre>

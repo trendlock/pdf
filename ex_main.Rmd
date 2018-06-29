@@ -2,9 +2,23 @@
 title: "Example PDF Document"
 author: "Ross"
 date: "`r Sys.Date()`"
-geometry: margin=1.2in
-header-includes:
-  \pagenumbering{gobble}
+references:
+- id: fenner2012a
+  title: One-click science marketing
+  author:
+  - family: Fenner
+    given: Martin
+  container-title: Nature Materials
+  volume: 11
+  URL: 'http://dx.doi.org/10.1038/nmat3283'
+  DOI: 10.1038/nmat3283
+  issue: 4
+  publisher: Nature Publishing Group
+  page: 261-263
+  type: article-journal
+  issued:
+    year: 2012
+    month: 3
 output:
   pdf_document
 ---
@@ -17,8 +31,9 @@ library(tidyverse)
 
 ## Knitting PDF's with RMarkdown
 
-Lorem ipsum dolor sit amet, ius viris constituto mnesarchum ea, ius dicat inani iracundia ei, vim facer homero eirmod te. Nihil phaedrum qui eu. Et legere moderatius sea, solum soluta euismod id quo. Ei pro virtute consequat interesset, in cum melius graecis moderatius. Utinam accusata no sea, an nam solum omnium impedit, equidem propriae urbanitas per an.
+Lorem ipsum dolor sit amet, ius viris constituto mnesarchum ea, ius dicat inani iracundia ei, vim facer homero eirmod te. Nihil phaedrum qui eu. Et legere moderatius sea, solum soluta euismod id quo. Ei pro virtute consequat interesset, in cum melius graecis moderatius. Utinam accusata no sea, an nam solum omnium impedit, equidem propriae urbanitas per an. [^1]
 
+ [^1]: This is a footnote.
 
 Nam an iudico munere, mel errem nostrud et. Dicat audire accommodare eum et, assum laoreet sed ad. Ne error eirmod salutatus pro. An noster fabellas democritum cum. Ponderum imperdiet scribentur et vim, ad has enim errem vituperatoribus. Usu eu noster accusamus, mel quis urbanitas cu.
 
@@ -58,4 +73,7 @@ plot(pressure)
 
 Lorem ipsum dolor sit amet, ius viris constituto mnesarchum ea, ius dicat inani iracundia ei, vim facer homero eirmod te. Nihil phaedrum qui eu. Et legere moderatius sea, solum soluta euismod id quo. Ei pro virtute consequat interesset, in cum melius graecis moderatius. Utinam accusata no sea, an nam solum omnium impedit, equidem propriae urbanitas per an.
 
-Nam an iudico munere, mel errem nostrud et. Dicat audire accommodare eum et, assum laoreet sed ad. Ne error eirmod salutatus pro. An noster fabellas democritum cum. Ponderum imperdiet scribentur et vim, ad has enim errem vituperatoribus. Usu eu noster accusamus, mel quis urbanitas cu.
+Nam an iudico munere, mel errem nostrud et. Dicat audire accommodare eum et, assum laoreet sed ad. Ne error eirmod salutatus pro. An noster fabellas democritum cum. Ponderum imperdiet scribentur et vim, ad has enim errem vituperatoribus. Usu eu noster accusamus, mel quis urbanitas cu [@fenner2012a].
+
+
+# References

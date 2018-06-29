@@ -227,9 +227,6 @@ div.tocify {
 </div>
 
 
-<div id="general" class="section level1">
-<h1>General</h1>
-</div>
 <div id="spacing-page-breaks-formatting" class="section level1">
 <h1>Spacing, Page Breaks, Formatting</h1>
 <p>In general the document with format each object chronologically. But some chuck options will modify the placement of an plot, table or image.</p>
@@ -245,7 +242,7 @@ div.tocify {
 <div id="sidenote" class="section level2">
 <h2>Sidenote</h2>
 <p>There are options to set behaviour but they don’t work very well, as they dont seem to be strict.</p>
-<pre class="r"><code>knitr::opts_chunk$set(fig.pos = &quot;t&quot;)</code></pre>
+<pre><code>knitr::opts_chunk$set(fig.pos = &quot;t&quot;)</code></pre>
 <p>Where:</p>
 <blockquote>
 <p>h , here; t , top; b , bottom; p , page of float</p>
@@ -254,21 +251,61 @@ div.tocify {
 </div>
 <div id="margin-control" class="section level1">
 <h1>Margin Control</h1>
-<p>Latex/Pandoc commands can be used in the first layer of the yaml. (First layer meaning the same indentation as <code>title</code>, <code>date</code>, etc.)</p>
-<pre class="r"><code>geometry: margin=1.2in</code></pre>
+<p>Latex/Pandoc commands can be used in the first layer of the <code>yaml</code>. (First layer meaning the same indentation as <code>title</code>, <code>date</code>, etc.)</p>
+<pre><code>geometry: margin=1.2in</code></pre>
 </div>
 <div id="typeface-font" class="section level1">
 <h1>Typeface / Font</h1>
 <p>This is a tricky one because there isn’t <code>R</code> and <code>RMarkdown</code> specific functions to modify the font…</p>
-<p>All indications are that you have to use LATEX.</p>
+<p>All indications are that you have to use LaTeX.</p>
 <pre><code>\renewcommand{\familydefault}{\rmdefault}</code></pre>
 <p>(Some possibilities)[<a href="https://www.sharelatex.com/learn/Font_sizes,_families,_and_styles#Font_families" class="uri">https://www.sharelatex.com/learn/Font_sizes,_families,_and_styles#Font_families</a>]</p>
 </div>
-<div id="footnotes-and-bibliography" class="section level1">
-<h1>Footnotes and Bibliography</h1>
+<div id="footnotes" class="section level1">
+<h1>Footnotes</h1>
+<p>Easy, using <code>[^1]</code> and a connected <code>[^1]: blah</code>:</p>
+<pre><code>Utinam accusata no sea, an nam solum omnium impedit, equidem propriae urbanitas per an. [^1]
+
+[^1]: Lorem ipsum dolor sit amet, ius viris constituto mnesarchum ea, ius dicat inani iracundia ei, vim facer homero eirmod te. Nihil phaedrum qui eu.
+</code></pre>
+</div>
+<div id="bibliographies-and-citations" class="section level1">
+<h1>Bibliographies and Citations</h1>
+<p>There are a bunch of ways to do this. I have included in <code>ex_main.Rmd</code> and example of a internal <code>yaml</code> reference, with citation and Bibliography at the end. A bit of a LaTeX learning curve.</p>
+<div id="a-reference" class="section level3">
+<h3>A Reference</h3>
+<pre><code>references:
+- id: fenner2012a
+  title: One-click science marketing
+  author:
+  - family: Fenner
+    given: Martin
+  container-title: Nature Materials
+  volume: 11
+  URL: 'http://dx.doi.org/10.1038/nmat3283'
+  DOI: 10.1038/nmat3283
+  issue: 4
+  publisher: Nature Publishing Group
+  page: 261-263
+  type: article-journal
+  issued:
+    year: 2012
+    month: 3</code></pre>
+</div>
+<div id="a-citation" class="section level3">
+<h3>A Citation</h3>
+<pre><code>[@fenner2012a]</code></pre>
+</div>
+<div id="automatically-getting-an-attached-bibliography-at-the-end-of-document" class="section level3">
+<h3>Automatically getting an attached bibliography at the end of document</h3>
+<pre><code># References</code></pre>
+</div>
 </div>
 <div id="page-numbers" class="section level1">
 <h1>Page Numbers</h1>
+<p>By default a <code>RMarkdown</code> using the <code>pdf_document</code> output with have page numbers. Controlled in <code>yaml</code> with LaTeX command:</p>
+<pre><code>header-includes:
+  \pagenumbering{gobble}</code></pre>
 </div>
 <div id="tables" class="section level1">
 <h1>Tables</h1>
@@ -276,20 +313,6 @@ div.tocify {
 <p>Using the <code>kable()</code> function neatens it up with cell borders etc.</p>
 <pre class="r"><code>kableExtra::kable(head(iris))</code></pre>
 
-<div id="captions" class="section level2">
-<h2>Captions</h2>
-<p>Using the <code>caption</code> argument for <code>kable</code> you can add numbered table captions.</p>
-<blockquote>
-<p>NOTE: when using captions <code>kable</code> rearranges the placing of the table.</p>
-</blockquote>
-<pre><code>```{r cars2, echo=F}
-knitr::kable(head(mtcars))
-```</code></pre>
-<p>vs</p>
-<pre><code>```{r cars2, echo=F}
-knitr::kable(head(mtcars), caption = &quot;A Caption&quot;)
-```</code></pre>
-</div>
 </div>
 
 
