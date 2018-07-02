@@ -257,10 +257,27 @@ div.tocify {
 </blockquote>
 </div>
 </div>
+<div id="table-of-contents" class="section level1">
+<h1>Table of Contents</h1>
+<pre><code>---
+title: &quot;Example PDF Document&quot;
+author: &quot;Ross&quot;
+date: &quot;2018-07-02&quot;
+output:
+  pdf_document:
+    toc: true
+    toc_depth: 2
+---</code></pre>
+</div>
 <div id="margin-control" class="section level1">
 <h1>Margin Control</h1>
 <p>Latex/Pandoc commands can be used in the first layer of the <code>yaml</code>. (First layer meaning the same indentation as <code>title</code>, <code>date</code>, etc.)</p>
-<pre><code>geometry: margin=1.2in</code></pre>
+<pre><code>---
+title: &quot;Example PDF Document&quot;
+author: &quot;Ross&quot;
+date: &quot;2018-07-02&quot;
+geometry: margin=1.2in
+---</code></pre>
 </div>
 <div id="typeface-font" class="section level1">
 <h1>Typeface / Font</h1>
@@ -282,7 +299,10 @@ div.tocify {
 <p>There are a bunch of ways to do this. I have included in <code>ex_main.Rmd</code> and example of a internal <code>yaml</code> reference, with citation and Bibliography at the end. A bit of a LaTeX learning curve.</p>
 <div id="a-reference" class="section level3">
 <h3>A Reference</h3>
-<pre><code>references:
+<pre><code>title: &quot;Example PDF Document&quot;
+author: &quot;Ross&quot;
+date: &quot;2018-07-02&quot;
+references:
 - id: fenner2012a
   title: One-click science marketing
   author:
@@ -312,7 +332,10 @@ div.tocify {
 <div id="page-numbers" class="section level1">
 <h1>Page Numbers</h1>
 <p>By default a <code>RMarkdown</code> using the <code>pdf_document</code> output with have page numbers. Controlled in <code>yaml</code> with LaTeX command:</p>
-<pre><code>header-includes:
+<pre><code>title: &quot;Example PDF Document&quot;
+author: &quot;Ross&quot;
+date: &quot;2018-07-02&quot;
+header-includes:
   \pagenumbering{gobble}</code></pre>
 </div>
 <div id="tables" class="section level1">
@@ -320,131 +343,7 @@ div.tocify {
 <p>If the data is in a <code>data.frame</code>, <code>df</code> or <code>tibble</code> class object then we can just <code>print()</code> the data to get a table.</p>
 <p>Using the <code>kable()</code> function neatens it up with cell borders etc.</p>
 <pre class="r"><code>kableExtra::kable(head(iris))</code></pre>
-<table>
-<thead>
-<tr>
-<th style="text-align:right;">
-Sepal.Length
-</th>
-<th style="text-align:right;">
-Sepal.Width
-</th>
-<th style="text-align:right;">
-Petal.Length
-</th>
-<th style="text-align:right;">
-Petal.Width
-</th>
-<th style="text-align:left;">
-Species
-</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:right;">
-5.1
-</td>
-<td style="text-align:right;">
-3.5
-</td>
-<td style="text-align:right;">
-1.4
-</td>
-<td style="text-align:right;">
-0.2
-</td>
-<td style="text-align:left;">
-setosa
-</td>
-</tr>
-<tr>
-<td style="text-align:right;">
-4.9
-</td>
-<td style="text-align:right;">
-3.0
-</td>
-<td style="text-align:right;">
-1.4
-</td>
-<td style="text-align:right;">
-0.2
-</td>
-<td style="text-align:left;">
-setosa
-</td>
-</tr>
-<tr>
-<td style="text-align:right;">
-4.7
-</td>
-<td style="text-align:right;">
-3.2
-</td>
-<td style="text-align:right;">
-1.3
-</td>
-<td style="text-align:right;">
-0.2
-</td>
-<td style="text-align:left;">
-setosa
-</td>
-</tr>
-<tr>
-<td style="text-align:right;">
-4.6
-</td>
-<td style="text-align:right;">
-3.1
-</td>
-<td style="text-align:right;">
-1.5
-</td>
-<td style="text-align:right;">
-0.2
-</td>
-<td style="text-align:left;">
-setosa
-</td>
-</tr>
-<tr>
-<td style="text-align:right;">
-5.0
-</td>
-<td style="text-align:right;">
-3.6
-</td>
-<td style="text-align:right;">
-1.4
-</td>
-<td style="text-align:right;">
-0.2
-</td>
-<td style="text-align:left;">
-setosa
-</td>
-</tr>
-<tr>
-<td style="text-align:right;">
-5.4
-</td>
-<td style="text-align:right;">
-3.9
-</td>
-<td style="text-align:right;">
-1.7
-</td>
-<td style="text-align:right;">
-0.4
-</td>
-<td style="text-align:left;">
-setosa
-</td>
-</tr>
-</tbody>
-</table>
+
 <p><br /></p>
 <p>Captioning a table, changes the formatting (centres and puts at bottom of page). See <code>ex_table.pdf</code></p>
 <div class="figure">
