@@ -43,12 +43,32 @@ Where:
 
 > h , here; t , top; b , bottom; p , page of float
 
+
+# Table of Contents
+
+```
+---
+title: "Example PDF Document"
+author: "Ross"
+date: "`r Sys.Date()`"
+output:
+  pdf_document:
+    toc: true
+    toc_depth: 2
+---
+```
+
 # Margin Control
 
 Latex/Pandoc commands can be used in the first layer of the `yaml`. (First layer meaning the same indentation as `title`, `date`, etc.)
 
 ```
+---
+title: "Example PDF Document"
+author: "Ross"
+date: "`r Sys.Date()`"
 geometry: margin=1.2in
+---
 ```
 
 # Typeface / Font
@@ -79,6 +99,9 @@ There are a bunch of ways to do this. I have included in `ex_main.Rmd` and examp
 
 ### A Reference
 ```
+title: "Example PDF Document"
+author: "Ross"
+date: "`r Sys.Date()`"
 references:
 - id: fenner2012a
   title: One-click science marketing
@@ -115,6 +138,9 @@ references:
 By default a `RMarkdown` using the `pdf_document` output with have page numbers. Controlled in `yaml` with LaTeX command:
 
 ```
+title: "Example PDF Document"
+author: "Ross"
+date: "`r Sys.Date()`"
 header-includes:
   \pagenumbering{gobble}
 ```
